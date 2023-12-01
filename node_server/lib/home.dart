@@ -12,7 +12,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Center(child: Text("Node_Backend_App")),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center, // Center vertically
