@@ -10,13 +10,13 @@ app.use(express.urlencoded({
 
 const productData = [];
 
-app.listen(2000, () => {
-    console.log("Connected to server at 2000");
+app.listen(3000, () => {
+    console.log("Connected to server at 3000");
 });
 
 //post api
 
-app.post("api/add_product", (req,res) =>{
+app.post("/api/add_product",(req,res) =>{
 
     console.log("Result", req.body);
 
@@ -36,6 +36,23 @@ app.post("api/add_product", (req,res) =>{
         "product" : pdata
     });
 
+})
+
+//get api
+
+app.get("/api/get_product" ,(req,res) =>{
+
+    if(productData.length >0) {
+        res.status(200).send({
+            'status_code' : 200,
+            'products' : productData
+        });
+    }else{
+        res.status(200).send({
+            'status_code' : 200,
+            'products' : []
+        });
+    }
 })
 
 

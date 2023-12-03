@@ -16,7 +16,9 @@ class _CreateDataState extends State<CreateData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+      ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +56,8 @@ class _CreateDataState extends State<CreateData> {
               },
               child: const Text("Create Data"))
         ],
-      )),
+      ),
+      ),
     );
   }
 }

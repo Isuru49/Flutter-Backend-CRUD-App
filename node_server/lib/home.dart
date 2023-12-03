@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:node_server/create.dart';
+import 'package:node_server/fetch.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,7 +14,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Node_Backend_App")),
+        title: const Center(
+            child: Text(
+          "Node_Backend_App",
+          style: TextStyle(color: Colors.white),
+        )),
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(
@@ -27,16 +33,52 @@ class _HomeScreenState extends State<HomeScreen> {
                   MaterialPageRoute(builder: (context) => const CreateData()),
                 );
               },
-              child: const Text("CREATE"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Colors.lightBlue, // Set the background color to blue
+              ),
+              child: const Text(
+                "CREATE",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             const SizedBox(height: 10), // Reduce the height between buttons
-            ElevatedButton(onPressed: () {}, child: const Text("READ")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const FetchData()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightBlue,
+                ),
+                child: const Text(
+                  " READ   ",
+                  style: TextStyle(color: Colors.white),
+                )),
 
             const SizedBox(height: 10),
-            ElevatedButton(onPressed: () {}, child: const Text("UPLOAD")),
+            ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightBlue,
+                ),
+                child: const Text(
+                  "UPLOAD",
+                  style: TextStyle(color: Colors.white),
+                )),
 
             const SizedBox(height: 10),
-            ElevatedButton(onPressed: () {}, child: const Text("DELETE")),
+            ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightBlue,
+                ),
+                child: const Text(
+                  "DELETE",
+                  style: TextStyle(color: Colors.white),
+                )),
           ],
         ),
       ),
